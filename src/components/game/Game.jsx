@@ -12,14 +12,16 @@ import {
 const Game = ({ image, name, platforms }) => {
 	const { addProductToCart } = useCart();
 	const [activePlatform, setActivePlatform] = useState(0);
-	const gamePlatform = platforms[activePlatform];
+	const gamePlatform = platforms[activePlatform] || platforms[0];
+
+	console.log(name, activePlatform);
 	return (
 		<div>
 			<StyledGame>
 				<StyledGameImage src={image} alt='' />
 				<GamePlatforms
 					platforms={platforms}
-					activePlatform={activePlatform}
+					activePlatform={platforms[activePlatform] ? activePlatform : 0}
 					setActivePlatform={setActivePlatform}
 				/>
 			</StyledGame>
@@ -30,7 +32,7 @@ const Game = ({ image, name, platforms }) => {
 				>
 					Add to cart
 				</StyledBuyButton>
-				<span>{gamePlatform.price} €</span>
+				<span>{gamePlatform?.price} €</span>
 			</StyledGameFooter>
 		</div>
 	);

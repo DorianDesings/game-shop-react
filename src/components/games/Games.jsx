@@ -15,9 +15,8 @@ const Games = ({ filters, cart, setCart }) => {
 
 const filterByPlatform = (filters, PRODUCTS) => {
 	const filtersActive = Object.values(filters).filter(filter => filter);
-	if (!filtersActive.length) return [...PRODUCTS];
 
-	console.log(filters);
+	if (!filtersActive.length) return [...PRODUCTS];
 
 	const filteredProductsByPlatform = PRODUCTS.filter(game => {
 		return game.platforms.some(platform => filters[platform.name]);
@@ -29,8 +28,6 @@ const filterByPlatform = (filters, PRODUCTS) => {
 		);
 		return { ...game, platforms: filteredPlatforms };
 	});
-
-	console.log(updatedPlatforms);
 
 	return updatedPlatforms;
 };

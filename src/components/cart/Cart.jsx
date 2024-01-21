@@ -10,8 +10,6 @@ const Cart = ({ cart, setCart }) => {
 
 	if (cart.length === 0) return <p>No products</p>;
 
-	console.log(cart);
-
 	return (
 		<div>
 			{cart.map(game => (

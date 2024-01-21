@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../contexts/cartContext';
 import GamePlatforms from '../game-platforms/GamePlatforms';
 import {
 	StyledBuyButton,
@@ -8,7 +9,8 @@ import {
 	StyledGameName
 } from './styles';
 
-const Game = ({ image, name, platforms, cart, setCart }) => {
+const Game = ({ image, name, platforms }) => {
+	const { cart, setCart } = useContext(CartContext);
 	const [activePlatform, setActivePlatform] = useState(0);
 	const gamePlatform = platforms[activePlatform];
 	return (

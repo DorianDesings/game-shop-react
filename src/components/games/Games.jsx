@@ -1,13 +1,16 @@
+import { useContext } from 'react';
 import { PRODUCTS } from '../../constants/products';
+import { FiltersContext } from '../../contexts/filtersContext';
 import Game from '../game/Game';
 import { StyledGames } from './styles';
 
-const Games = ({ filters, cart, setCart }) => {
+const Games = () => {
+	const { filters } = useContext(FiltersContext);
 	const filteredGames = filterByPlatform(filters, PRODUCTS);
 	return (
 		<StyledGames>
 			{filteredGames.map(game => {
-				return <Game key={game.id} cart={cart} setCart={setCart} {...game} />;
+				return <Game key={game.id} {...game} />;
 			})}
 		</StyledGames>
 	);

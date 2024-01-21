@@ -1,7 +1,10 @@
+import { useContext } from 'react';
+import { FiltersContext } from '../../contexts/filtersContext';
 import { getPlattforms } from '../../utils/get-platforms';
 import FilterPlatform from '../filter-platform/FilterPlatform';
 
-const Filters = ({ filters, setFilters }) => {
+const Filters = () => {
+	const { filters, setFilters } = useContext(FiltersContext);
 	const allPlatforms = getPlattforms();
 	return (
 		<div>

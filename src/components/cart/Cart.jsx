@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/cartContext';
 import {
 	StyledButtonRemove,
 	StyledCartGameImageContainer,
@@ -5,7 +7,8 @@ import {
 	StyledPlatformGame
 } from './styles';
 
-const Cart = ({ cart, setCart }) => {
+const Cart = () => {
+	const { cart, setCart } = useContext(CartContext);
 	const totalPrice = calculateTotalPrice(cart);
 
 	if (cart.length === 0) return <p>No products</p>;

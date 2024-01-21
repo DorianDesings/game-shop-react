@@ -14,7 +14,6 @@ const Game = ({ image, name, platforms }) => {
 	const [activePlatform, setActivePlatform] = useState(0);
 	const gamePlatform = platforms[activePlatform] || platforms[0];
 
-	console.log(name, activePlatform);
 	return (
 		<div>
 			<StyledGame>

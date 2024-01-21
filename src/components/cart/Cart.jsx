@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { CartContext } from '../../contexts/cartContext';
+import { useCart } from '../../hooks/useCart';
 import {
 	StyledButtonRemove,
 	StyledCartGameImageContainer,
@@ -8,62 +7,29 @@ import {
 } from './styles';
 
 const Cart = () => {
-	const { cart, setCart } = useContext(CartContext);
-	const totalPrice = calculateTotalPrice(cart);
+	const { cart, totalPrice, isCartEmpty, deleteProduct } = useCart();
 
-	if (cart.length === 0) return <p>No products</p>;
+	if (isCartEmpty) return <p>No products</p>;
 
 	return (
 		<div>
-			{cart.map(game => (
-				<div key={game.id}>
+			{cart.map(({ id, image, platformName, amount, price }) => (
+				<div key={id}>
 					<StyledCartGameImageContainer>
-						<img src={game.image} alt='' />
-						<StyledPlatformGame>{game.platformName}</StyledPlatformGame>
-						{game.amount > 1 && (
-							<StyledGameAmount>{game.amount}</StyledGameAmount>
-						)}
-						<StyledButtonRemove
-							onClick={() => deleteProduct(cart, setCart, game.id)}
-						>
+						<img src={image} alt='' />
+						<StyledPlatformGame>{platformName}</StyledPlatformGame>
+						{amount > 1 && <StyledGameAmount>{amount}</StyledGameAmount>}
+						<StyledButtonRemove onClick={() => deleteProduct(id)}>
 							Delete
 						</StyledButtonRemove>
 					</StyledCartGameImageContainer>
-					<p>Price: {(game.price * game.amount).toFixed(2)} €</p>
+					<p>Price: {(price * amount).toFixed(2)} €</p>
 				</div>
 			))}
 
-			{totalPrice !== 0 && <p>Total: {totalPrice.toFixed(2)} €</p>}
+			{!isCartEmpty && <p>Total: {totalPrice} €</p>}
 		</div>
 	);
-};
-
-const calculateTotalPrice = cart => {
-	return cart.reduce((acc, game) => game.price * game.amount + acc, 0);
-};
-
-const deleteAllProducts = (cart, setCart, id) => {
-	const updatedCart = cart.filter(cartProduct => cartProduct.id !== id);
-
-	setCart(updatedCart);
-};
-
-const deleteProduct = (cart, setCart, id) => {
-	const productToDelete = cart.find(cartProduct => cartProduct.id === id);
-
-	if (productToDelete.amount === 1) {
-		deleteAllProducts(cart, setCart, id);
-		return;
-	}
-
-	const updatedCart = cart.map(cartProduct => {
-		console.log(cartProduct);
-		if (cartProduct.id === id) cartProduct.amount--;
-		console.log(cartProduct);
-		return cartProduct;
-	});
-
-	setCart(updatedCart);
 };
 
 export default Cart;

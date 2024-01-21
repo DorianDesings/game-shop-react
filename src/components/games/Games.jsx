@@ -1,12 +1,10 @@
-import { useContext } from 'react';
-import { PRODUCTS } from '../../constants/products';
-import { FiltersContext } from '../../contexts/filtersContext';
+import { useFilters } from '../../hooks/useFilters';
 import Game from '../game/Game';
 import { StyledGames } from './styles';
 
 const Games = () => {
-	const { filters } = useContext(FiltersContext);
-	const filteredGames = filterByPlatform(filters, PRODUCTS);
+	const { filteredGames } = useFilters();
+
 	return (
 		<StyledGames>
 			{filteredGames.map(game => {
@@ -14,25 +12,6 @@ const Games = () => {
 			})}
 		</StyledGames>
 	);
-};
-
-const filterByPlatform = (filters, PRODUCTS) => {
-	const filtersActive = Object.values(filters).filter(filter => filter);
-
-	if (!filtersActive.length) return [...PRODUCTS];
-
-	const filteredProductsByPlatform = PRODUCTS.filter(game => {
-		return game.platforms.some(platform => filters[platform.name]);
-	});
-
-	const updatedPlatforms = filteredProductsByPlatform.map(game => {
-		const filteredPlatforms = game.platforms.filter(
-			platform => filters[platform.name]
-		);
-		return { ...game, platforms: filteredPlatforms };
-	});
-
-	return updatedPlatforms;
 };
 
 export default Games;

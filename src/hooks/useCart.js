@@ -8,6 +8,29 @@ export const useCart = () => {
 
 	const totalPrice = calculateTotalPrice(cart);
 
+	const addProductToCart = (
+		gameName,
+		image,
+		{ id, name: platformName, price }
+	) => {
+		const game = cart.find(game => game.id === id);
+
+		if (!game) {
+			setCart([
+				...cart,
+				{ id, gameName, image, platformName, price, amount: 1 }
+			]);
+			return;
+		}
+
+		const updatedCart = cart.map(game => {
+			if (game.id === id) game.amount++;
+			return game;
+		});
+
+		setCart(updatedCart);
+	};
+
 	const deleteAllProducts = id => {
 		const updatedCart = cart.filter(cartProduct => cartProduct.id !== id);
 
@@ -30,7 +53,7 @@ export const useCart = () => {
 		setCart(updatedCart);
 	};
 
-	return { cart, totalPrice, isCartEmpty, deleteProduct };
+	return { cart, totalPrice, isCartEmpty, addProductToCart, deleteProduct };
 };
 
 const calculateTotalPrice = cart => {

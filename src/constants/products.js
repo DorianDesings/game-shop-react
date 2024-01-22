@@ -23,7 +23,8 @@ export const PRODUCTS = [
 		name: 'God of War',
 		platforms: [
 			{ id: v4(), name: 'PC', price: 17.29 },
-			{ id: v4(), name: 'PS4', price: 15.99 }
+			{ id: v4(), name: 'PS4', price: 15.99 },
+			{ id: v4(), name: 'PS5', price: 25.99 }
 		],
 		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.png',
 		releaseDate: 2018

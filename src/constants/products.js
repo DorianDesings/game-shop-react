@@ -5,7 +5,8 @@ export const PRODUCTS = [
 		id: v4(),
 		name: 'Spiderman 2',
 		platforms: [{ id: v4(), name: 'PS5', price: 54.99 }],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co79vq.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co79vq.png',
+		releaseDate: 2023
 	},
 	{
 		id: v4(),
@@ -14,7 +15,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PS4', price: 54.99 },
 			{ id: v4(), name: 'PS5', price: 62.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5s5v.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5s5v.png',
+		releaseDate: 2022
 	},
 	{
 		id: v4(),
@@ -23,7 +25,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PC', price: 17.29 },
 			{ id: v4(), name: 'PS4', price: 15.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.png',
+		releaseDate: 2018
 	},
 	{
 		id: v4(),
@@ -33,7 +36,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PS4', price: 33.83 },
 			{ id: v4(), name: 'Xbox', price: 29.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co65ip.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co65ip.png',
+		releaseDate: 2017
 	},
 	{
 		id: v4(),
@@ -44,7 +48,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PS5', price: 19.99 },
 			{ id: v4(), name: 'Xbox', price: 19.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2t83.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2t83.png',
+		releaseDate: 2020
 	},
 	{
 		id: v4(),
@@ -54,7 +59,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PS5', price: 49.99 },
 			{ id: v4(), name: 'Xbox', price: 39.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co597d.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co597d.png',
+		releaseDate: 2023
 	},
 	{
 		id: v4(),
@@ -65,7 +71,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PS5', price: 59.99 },
 			{ id: v4(), name: 'Xbox', price: 59.99 }
 		],
-		image: ' https://images.igdb.com/igdb/image/upload/t_cover_big/co6lxr.png'
+		image: ' https://images.igdb.com/igdb/image/upload/t_cover_big/co6lxr.png',
+		releaseDate: 2023
 	},
 	{
 		id: v4(),
@@ -77,7 +84,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PS5', price: 49.99 },
 			{ id: v4(), name: 'Xbox', price: 43.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6bo0.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6bo0.png',
+		releaseDate: 2023
 	},
 	{
 		id: v4(),
@@ -87,7 +95,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PC', price: 29.99 },
 			{ id: v4(), name: 'Xbox', price: 9.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2e1l.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2e1l.png',
+		releaseDate: 2020
 	},
 	{
 		id: v4(),
@@ -96,7 +105,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PC', price: 19.99 },
 			{ id: v4(), name: 'Xbox', price: 8.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1y41.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1y41.png',
+		releaseDate: 2015
 	},
 	{
 		id: v4(),
@@ -105,13 +115,15 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PC', price: 34.89 },
 			{ id: v4(), name: 'PS5', price: 44.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5xex.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5xex.png',
+		releaseDate: 2022
 	},
 	{
 		id: v4(),
 		name: 'The Last of Us Part II',
 		platforms: [{ id: v4(), name: 'PS4', price: 44.99 }],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5ziw.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5ziw.png',
+		releaseDate: 2020
 	},
 	{
 		id: v4(),
@@ -121,7 +133,8 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PS4', price: 59.99 },
 			{ id: v4(), name: 'Xbox', price: 59.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1q1f.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1q1f.png',
+		releaseDate: 2018
 	},
 	{
 		id: v4(),
@@ -131,6 +144,7 @@ export const PRODUCTS = [
 			{ id: v4(), name: 'PS4', price: 35.89 },
 			{ id: v4(), name: 'Xbox', price: 29.99 }
 		],
-		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2a23.png'
+		image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2a23.png',
+		releaseDate: 2019
 	}
 ];

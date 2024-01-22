@@ -32,6 +32,11 @@ const sortGames = (games, sortBy) => {
 				return a.name.localeCompare(b.name);
 			});
 			return sortedGames;
+		case 2:
+			sortedGames.sort((a, b) => {
+				return b.releaseDate - a.releaseDate;
+			});
+			return sortedGames;
 	}
 };
 

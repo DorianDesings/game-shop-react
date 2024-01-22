@@ -32,16 +32,19 @@ const StyledGameAmount = styled.span`
 	border-radius: 50%;
 `;
 
-const StyledButtonRemove = styled.button`
+const StyledIconRemove = styled.img`
 	position: absolute;
-	bottom: 0;
-	right: -3.5rem;
-	padding: 0.3rem;
+	bottom: 0rem;
+	right: 0rem;
+	width: 1.4rem;
 	font-size: 0.8rem;
+	padding: 0.2rem;
+	background-color: black;
+	cursor: pointer;
 `;
 
 export {
-	StyledButtonRemove,
+	StyledIconRemove,
 	StyledCartGameImageContainer,
 	StyledGameAmount,
 	StyledPlatformGame

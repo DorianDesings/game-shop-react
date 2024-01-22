@@ -1,8 +1,8 @@
 import { useCart } from '../../hooks/useCart';
 import {
-	StyledButtonRemove,
 	StyledCartGameImageContainer,
 	StyledGameAmount,
+	StyledIconRemove,
 	StyledPlatformGame
 } from './styles';
 
@@ -19,9 +19,11 @@ const Cart = () => {
 						<img src={image} alt='' />
 						<StyledPlatformGame>{platformName}</StyledPlatformGame>
 						{amount > 1 && <StyledGameAmount>{amount}</StyledGameAmount>}
-						<StyledButtonRemove onClick={() => deleteProduct(id)}>
-							Delete
-						</StyledButtonRemove>
+						<StyledIconRemove
+							src='/trash-icon.svg'
+							alt=''
+							onClick={() => deleteProduct(id)}
+						/>
 					</StyledCartGameImageContainer>
 					<p>Price: {(price * amount).toFixed(2)} €</p>
 				</div>

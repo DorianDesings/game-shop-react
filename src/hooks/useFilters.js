@@ -3,9 +3,10 @@ import { PRODUCTS } from '../constants/products';
 import { FiltersContext } from '../contexts/filtersContext';
 
 export const useFilters = () => {
-	const { filters, setFilters } = useContext(FiltersContext);
+	const { filters, setFilters, sortBy, setSortBy } = useContext(FiltersContext);
 
-	const filteredGames = filterByPlatform(filters, PRODUCTS);
+	let filteredGames = filterByPlatform(PRODUCTS, filters);
+	filteredGames = sortGames(filteredGames, sortBy);
 
 	const changeFilter = (platform, checked) => {
 		const newFilters = {
@@ -16,10 +17,25 @@ export const useFilters = () => {
 		setFilters(newFilters);
 	};
 
-	return { filters, changeFilter, filteredGames };
+	return { filters, changeFilter, filteredGames, setSortBy };
 };
 
-const filterByPlatform = (filters, PRODUCTS) => {
+const sortGames = (games, sortBy) => {
+	const sortedGames = [...games];
+	const sortValue = Number(sortBy);
+	console.log(sortedGames);
+	switch (sortValue) {
+		case 0:
+			return sortedGames;
+		case 1:
+			sortedGames.sort((a, b) => {
+				return a.name.localeCompare(b.name);
+			});
+			return sortedGames;
+	}
+};
+
+const filterByPlatform = (PRODUCTS, filters) => {
 	const filtersActive = Object.values(filters).filter(filter => filter);
 
 	if (!filtersActive.length) return [...PRODUCTS];

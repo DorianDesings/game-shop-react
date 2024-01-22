@@ -9,8 +9,10 @@ export const FiltersProvider = ({ children }) => {
 		Xbox: false
 	});
 
+	const [sortBy, setSortBy] = useState(0);
+
 	return (
-		<FiltersContext.Provider value={{ filters, setFilters }}>
+		<FiltersContext.Provider value={{ filters, setFilters, sortBy, setSortBy }}>
 			{children}
 		</FiltersContext.Provider>
 	);
